@@ -254,7 +254,7 @@
 #### 2.2. Блок-схема решения  
 
 <div style="text-align: center;">
-    <img src="/Users/muzafarov/Desktop/MyEducation/SafetyHelmetDetection/images/block_schema.jpg" alt="Пример изображения" width="800">
+    <img src="images/block_schema.png" alt="Пример изображения" width="1600">
     <p>Предварительная блок-схема решения</p>
 </div>
 
