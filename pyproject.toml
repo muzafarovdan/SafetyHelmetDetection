@@ -1,0 +1,30 @@
+[tool.ruff]
+line-length = 88  # длина строки, совместимая с Black
+select = ["E", "F", "W", "C", "N"]  # активируем проверки (PEP8, ошибки форматирования, нейминга)
+ignore = ["E501"]  # игнорируем ошибки длинных строк (Black исправляет это)
+fixable = ["ALL"]  # позволяет Ruff автоматически исправлять все поддерживаемые ошибки
+exclude = [
+    ".git",
+    "__pycache__",
+    "venv",
+    "build",
+    "dist",
+]  # исключаем директории
+
+[tool.black]
+line-length = 88  # максимальная длина строки
+target-version = ["py39"]  # версия Python, с которой вы работаете
+skip-string-normalization = false  # (по умолчанию) приводит строки к двойным кавычкам
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''  # исключаем файлы и папки, которые Black не будет форматировать
