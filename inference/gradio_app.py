@@ -20,8 +20,14 @@ def predict_and_draw(image):
             conf = box.conf[0].cpu().numpy()
             cls = int(box.cls[0].cpu().numpy())
             label = f"{class_names[cls]}: {conf:.2f}"
-            cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), (255, 0, 0), 2)
-            cv2.putText(image, label, (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
+            
+            if class_names[cls] == 'helmet':
+                color = (0, 255, 0)  
+            else:
+                color = (255, 0, 0)  
+            
+            cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), color, 3)
+            cv2.putText(image, label, (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 3)
     
     return image
 
@@ -33,5 +39,6 @@ iface = gr.Interface(
     description="Загрузите изображение, чтобы получить предсказания модели YOLOv8n с отрисованными bounding box."
 )
 
+# Запуск приложения
 if __name__ == "__main__":
     iface.launch()
