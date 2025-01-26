@@ -61,10 +61,12 @@
 
 ## Пример работы web сервиса на gradio
 
-<figure style="text-align: center;">
+<p align="center">
   <img src="docs/images/web_app.jpg" alt="web app" width="100%">
-  <figcaption>Результат работы web сервиса</figcaption>
-</figure>
+</p>
+<p align="center">
+  <em>Результат работы web сервиса</em>
+</p>
 
 ## Contribute
 

@@ -413,5 +413,36 @@
 - Операционные риски: Зависимость от облачного провайдера и возможные задержки в сети.
 - Юридические риски: Соблюдение всех нормативных требований и защита данных.
 
+### 5. Выявленные несовершенства при тестировании сервиса
+
+- Модель ошибается на людях, у которых вместо каски надета шапка или кепка.
+- Модель ошибается на людях, у которых длинные и объемные волосы.
+- Модель ошибается на рыжих людях, путая их волосы с каской.
+
+#### Примеры ошибочных распознаваний:
+
+<p align="center">
+  <img src="images/failed_1.jpg" alt="error detection" width="100%">
+</p>
+
+<p align="center">
+  <img src="images/failed_2.jpg" alt="error detection" width="100%">
+</p>
+
+<p align="center">
+  <img src="images/failed_3.jpg" alt="error detection" width="100%">
+</p>
+
+<p align="center">
+  <img src="images/failed_4.jpg" alt="error detection" width="100%">
+</p>
+
+<p align="center">
+  <img src="images/failed_5.jpg" alt="error detection" width="100%">
+</p>
+
+<p align="center">
+  <img src="images/failed_6.jpg" alt="error detection" width="100%">
+</p>
 
 

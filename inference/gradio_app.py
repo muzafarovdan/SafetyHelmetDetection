@@ -11,6 +11,9 @@ model = YOLO(weights_path)
 class_names = ['helmet', 'head', 'person']
 
 def predict_and_draw(image):
+    if image is None or image.size == 0:
+        raise ValueError("Изображение не загружено. Пожалуйста, проверьте файл и попробуйте снова.")
+    
     image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     results = model(image_rgb)
     
@@ -22,9 +25,9 @@ def predict_and_draw(image):
             label = f"{class_names[cls]}: {conf:.2f}"
             
             if class_names[cls] == 'helmet':
-                color = (0, 255, 0)  
+                color = (0, 255, 0)
             else:
-                color = (255, 0, 0)  
+                color = (255, 0, 0)
             
             cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), color, 3)
             cv2.putText(image, label, (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 3)
@@ -39,6 +42,5 @@ iface = gr.Interface(
     description="Загрузите изображение, чтобы получить предсказания модели YOLOv8n с отрисованными bounding box."
 )
 
-# Запуск приложения
 if __name__ == "__main__":
-    iface.launch()
+    iface.launch(share=True)
