@@ -48,7 +48,7 @@
    ```
 2. Запустите `gradio_app.py`:
    ```bash
-   python gradio_app.py
+   python inference/gradio_app.py
    ```
 3. Откройте предоставленный URL в веб-браузере, чтобы загрузить изображение и получить предсказания модели.
 
